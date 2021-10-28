@@ -188,13 +188,7 @@ class Group(Graph):
                 return atom
     
     def __getitem__(self, idx):
-        if isinstance(idx, str):
-            for atom in self.getAtoms():
-                if atom.name == idx:
-                    return atom
-                
-        elif isinstance(idx, int):
-            return self.getAtoms()[idx]
+        return self.adj[idx]
 
     def getAngles(self):
         angles = set()
